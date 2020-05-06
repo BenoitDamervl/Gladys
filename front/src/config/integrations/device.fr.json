@@ -1,5 +1,11 @@
 [
   {
+    "key": "arduino",
+    "name": "Arduino",
+    "description": "Contrôlez vos appareils Arduino.",
+    "img": "/assets/integrations/cover/arduino.jpg"
+  },
+  {
     "key": "zwave",
     "name": "Z-Wave",
     "description": "Contrôlez vos appareils Z-Wave.",

@@ -542,7 +542,8 @@
       "features": {
         "lightButton": "Light",
         "switchButton": "Switch",
-        "pushButton": "Push button"
+        "pushButton": "Push button",
+        "sensor": "Sensor"
       }
     },
     "xiaomi": {

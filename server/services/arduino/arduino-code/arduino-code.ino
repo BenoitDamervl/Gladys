@@ -19,6 +19,7 @@ bool recvIR = false;
 bool dhtEnabled = false;
 
 int dht_pin;
+int pir_pin; 
 
 Servo myServo;  // SERVO
 
@@ -65,6 +66,10 @@ void recv_433(bool isEnabled, int data_pin) {
 void recv_dht(bool enabled, int data_pin) {
   dhtEnabled = enabled;
   dht_pin = data_pin;
+}
+void recv_mvt(bool enabled, int data_pin) {
+  mvtEnabled = enabled;
+  pir_pin = data_pin;
 }
 
 /*
@@ -141,6 +146,9 @@ void executeFunction(String json_data) {
   else if ( v["function_name"] == String("recv_dht") ) {
     recv_dht(v["parameters"]["enable"], v["parameters"]["data_pin"]);
   }
+  else if ( v["function_name"] == String("recv_mvt") ) {
+    recv_mvt(v["parameters"]["enable"], v["parameters"]["data_pin"]);
+  }
 }
 
 /**
@@ -164,6 +172,7 @@ void setup() {
 
   recv_433(true, 0);
   recv_dht(true, 8);
+  recv_mvt(true, A1);// PIR connected to A0 pin by default
 
 }
 
